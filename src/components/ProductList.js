@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ProductInfo from "./ProductInfo";
+import NewProductForm from "./NewProductForm";
 
 const ProductList = () => {
   const [products, setProducts] = useState([
@@ -14,11 +15,18 @@ const ProductList = () => {
       price: "300"
     }
   ]);
+  const addProduct = (title, price) => {
+    setProducts([
+      ...products,
+      { title: title, price: price, id: Math.random() }
+    ]);
+  };
   return (
     <ul className="product-list">
       {products.map(product => {
         return <ProductInfo product={product} key={product.id} />;
       })}
+      <NewProductForm addProduct={addProduct} />
     </ul>
   );
 };
