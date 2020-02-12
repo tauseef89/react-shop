@@ -1,12 +1,15 @@
 import React, { useState } from "react";
+import ProductInfo from "./ProductInfo";
 
 const ProductList = () => {
   const [products, setProducts] = useState([
     {
+      id: 1,
       title: "Product title 1",
       price: "200"
     },
     {
+      id: 2,
       title: "Product title 2",
       price: "300"
     }
@@ -14,12 +17,7 @@ const ProductList = () => {
   return (
     <ul className="product-list">
       {products.map(product => {
-        return (
-          <li>
-            <h3>{product.title}</h3>
-            <p>Price: {product.price}</p>
-          </li>
-        );
+        return <ProductInfo product={product} key={product.id} />;
       })}
     </ul>
   );
