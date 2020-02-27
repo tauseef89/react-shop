@@ -1,12 +1,20 @@
 import React from "react";
-import ProductList from "./components/ProductList";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import Header from "./components/Header";
+import ProductList from "./components/ProductList";
+import NewProductForm from "./components/NewProductForm";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <ProductList />
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={ProductList} />
+          <Route path="/add-product" component={NewProductForm} />
+        </Switch>
+      </Router>
     </div>
   );
 }

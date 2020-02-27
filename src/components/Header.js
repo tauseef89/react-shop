@@ -1,13 +1,12 @@
 import React from "react";
-// import "./header.css";
-
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
-    <header
-    // style={headerStyle}
-    // style={{ color: "#fff", backgroundColor: "#563d7c", padding: "10px" }}
-    >
+    <header>
       <h1>My Shop</h1>
+      <span></span>
+      <Link to="/">Products</Link>
+      <Link to="/add-product">Add Product</Link>
     </header>
   );
 };
