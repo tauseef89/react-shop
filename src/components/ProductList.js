@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ProductInfo from "./ProductInfo";
 import NewProductForm from "./NewProductForm";
 
@@ -15,7 +15,6 @@ const ProductList = () => {
       price: "300"
     }
   ]);
-  const [age, setAge] = useState(20);
 
   const addProduct = (title, price) => {
     setProducts([
@@ -23,21 +22,14 @@ const ProductList = () => {
       { title: title, price: price, id: Math.random() }
     ]);
   };
-  useEffect(() => {
-    console.log("useEffect callback", products);
-  }, [products]);
 
-  useEffect(() => {
-    console.log("useEffect callback", age);
-  }, [age]);
   return (
+    // <ul className={products.length < 3 ? "bg-red" : "bg-blue"}>
     <ul className="product-list">
       {products.map(product => {
         return <ProductInfo product={product} key={product.id} />;
       })}
       <NewProductForm addProduct={addProduct} />
-
-      <button onClick={() => setAge(age + 1)}>Add 1 to age: {age}</button>
     </ul>
   );
 };

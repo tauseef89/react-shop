@@ -1,13 +1,100 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #282c34;
+  color: #ffffff;
+}
+img {
+  max-width: 100%;
+}
+header {
+  background-color: #20232a;
+  padding: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+}
+header h1 {
+  font-size: 22px;
+  font-weight: 400;
+  color: #61dafb;
+}
+header span {
+  flex: auto;
+}
+header a {
+  color: #fff;
+  margin-left: 30px;
+  text-decoration: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.product-list {
+  max-width: 900px;
+  margin: auto;
+}
+
+.product-list li {
+  background: #20232a;
+  padding: 25px;
+  margin: 15px 0px;
+  list-style: none;
+  border-radius: 15px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.product-list li h3 {
+  font-weight: 400;
+}
+.product-list li button {
+  background: red;
+  border: red;
+  color: #fff;
+  font-size: 20px;
+  padding: 0 10px;
+  line-height: 29px;
+  cursor: pointer;
+}
+
+.product-list li p {
+  text-align: left;
+}
+
+form {
+  background: #20232a;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+form input {
+  width: 100%;
+  max-width: 275px;
+  height: 40px;
+  font-size: 15px;
+}
+form input[type="text"] {
+  background: #fff;
+  border: #fff;
+  padding-left: 15px;
+  font-weight: 600;
+}
+form input[type="submit"] {
+  background: #61dafb;
+  border: #61dafb;
+  cursor: pointer;
+  font-size: 18px;
 }
