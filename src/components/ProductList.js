@@ -23,8 +23,17 @@ const ProductList = () => {
     ]);
   };
 
+  // return products.length ? (
+  //   <ul className="product-list">
+  //     {products.map(product => {
+  //       return <ProductInfo product={product} key={product.id} />;
+  //     })}
+  //   </ul>
+  // ) : (
+  //   <div className="no-product">There is no products</div>
+  // );
+
   return (
-    // <ul className={products.length < 3 ? "bg-red" : "bg-blue"}>
     <ul className="product-list">
       {products.map(product => {
         return <ProductInfo product={product} key={product.id} />;
