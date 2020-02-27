@@ -1,5 +1,10 @@
-import React, { useState } from "react";
-const NewProductForm = ({ addProduct }) => {
+import React, { useState, useContext } from "react";
+
+import { ProductContext } from "../contexts/ProductContext";
+
+const NewProductForm = () => {
+  const { addProduct } = useContext(ProductContext);
+
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const handleSubmit = e => {
