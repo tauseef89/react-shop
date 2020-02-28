@@ -56,6 +56,7 @@ header a {
 }
 .blog-list li h3 {
   font-weight: 400;
+  color: #5ac0d5;
 }
 .blog-list li button {
   background: red;
