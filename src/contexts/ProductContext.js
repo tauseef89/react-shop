@@ -1,9 +1,9 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useReducer } from "react";
+import { productReducer } from "../reducers/productReducer";
 
-export const ProductContext = createContext();
-
-const ProductContextProvider = props => {
-  const [products, setProducts] = useState([
+// Initial state
+const initialState = {
+  products: [
     {
       id: 1,
       title: "Product title 1",
@@ -14,20 +14,33 @@ const ProductContextProvider = props => {
       title: "Product title 2",
       price: "300"
     }
-  ]);
+  ]
+};
 
-  const addProduct = (title, price) => {
-    setProducts([
-      ...products,
-      { title: title, price: price, id: Math.random() }
-    ]);
-  };
+export const ProductContext = createContext(initialState);
+
+const ProductContextProvider = props => {
+  const [state, dispatch] = useReducer(productReducer, initialState);
+
+  // Actions
   const removeProduct = id => {
-    setProducts(products.filter(product => product.id !== id));
+    dispatch({
+      type: "REMOVE_PRODUCT",
+      payload: id
+    });
+  };
+
+  const addProduct = product => {
+    dispatch({
+      type: "ADD_PRODUCT",
+      payload: product
+    });
   };
 
   return (
-    <ProductContext.Provider value={{ products, removeProduct, addProduct }}>
+    <ProductContext.Provider
+      value={{ products: state.products, addProduct, removeProduct }}
+    >
       {props.children}
     </ProductContext.Provider>
   );

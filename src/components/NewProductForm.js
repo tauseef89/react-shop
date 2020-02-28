@@ -10,7 +10,12 @@ const NewProductForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     // console.log(title, price);
-    addProduct(title, price);
+    const newProduct = {
+      id: Math.random(),
+      title,
+      price
+    };
+    addProduct(newProduct);
     setTitle("");
     setPrice("");
   };
