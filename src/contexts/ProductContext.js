@@ -7,12 +7,14 @@ const initialState = {
     {
       id: 1,
       title: "Product title 1",
-      price: "200"
+      price: "200",
+      image: "https://source.unsplash.com/random/300x300"
     },
     {
       id: 2,
       title: "Product title 2",
-      price: "300"
+      price: "300",
+      image: "https://source.unsplash.com/random/300x300"
     }
   ]
 };

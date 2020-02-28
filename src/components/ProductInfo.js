@@ -8,6 +8,7 @@ const ProductInfo = ({ product }) => {
   };
   return (
     <li>
+      <img src={product.image} width="150" />
       <h3>{product.title}</h3>
       <p>Price: {product.price}</p>
       <button onClick={deleteProduct}>x</button>
