@@ -37,12 +37,12 @@ header a {
   text-decoration: none;
 }
 
-.product-list {
+.blog-list {
   max-width: 900px;
   margin: auto;
 }
 
-.product-list li {
+.blog-list li {
   background: #20232a;
   padding: 25px;
   margin: 15px 0px;
@@ -54,10 +54,10 @@ header a {
   justify-content: space-between;
   align-items: center;
 }
-.product-list li h3 {
+.blog-list li h3 {
   font-weight: 400;
 }
-.product-list li button {
+.blog-list li button {
   background: red;
   border: red;
   color: #fff;
@@ -67,7 +67,7 @@ header a {
   cursor: pointer;
 }
 
-.product-list li p {
+.blog-list li p {
   text-align: left;
 }
 
