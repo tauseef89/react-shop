@@ -1,21 +1,7 @@
-import React, { useEffect, useContext } from "react";
-import BlogInfo from "./BlogInfo";
-
-import { BlogContext } from "../contexts/BlogContext";
+import React from "react";
 
 const BlogList = () => {
-  const { posts, getPosts } = useContext(BlogContext);
-  useEffect(() => {
-    getPosts();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  return (
-    <ul className="blog-list">
-      {posts.map(post => {
-        return <BlogInfo post={post} key={post.id} />;
-      })}
-    </ul>
-  );
+  return <ul className="blog-list">blog-list</ul>;
 };
 
 export default BlogList;
